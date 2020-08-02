@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/png" href="favicon.ico">
+  <title>Tetris Project</title>
+
+
+  <link rel="stylesheet" href="styles/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Righteous&family=Roboto+Condensed&family=Russo+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <script src="scripts/app2.js"></script>
+</head>
+<body>
+  
+  <!-- to change song choice comment out the current video and uncomment your choice -->
+  <!-- <video id="game-vid" src="assets/automatic.mp4"></video> -->
+  <video id="game-vid" src="/assets/Say_you_won't.mp4"></video>
+  <!-- <video id="game-vid" src="assets/return_to_besaid.mp4"></video> -->
+
+  <audio src="assets/bytes/soundbyte_electronic_confirm.mp3" id="confirm-sfx"></audio>
+  <audio src="assets/bytes/soundbyte_electronic_confirm3.mp3" id="confirm3-sfx"></audio>
+  <audio src="assets/bytes/soundbyte_text_tap_cut.mp3" id="text-tap"></audio>
+  <audio src="assets/bytes/soundbyte_laser_echo_newcut.mp3" id="land-sfx"></audio>
+  <audio src="assets/bytes/soundbyte_low_bass.mp3" id="crash-sfx"></audio>
+  <audio src="assets/bytes/soundbyte_snare.mp3" id="drop-sfx"></audio>
+  <audio src="assets/bytes/soundbyte_low_laser_echo.mp3" id="lose-sfx"></audio>
+  <video class="menu-backg" loop muted></video>
+  <main>
+    <div class="menu-screen">
+      <h1>The Tetris Project</h1>
+      <ul class="button-wrap">
+        <li class="buttons loaded1" id="one-player" value="1">Single player</li>
+        <li class="buttons loaded2" id="two-player" value="2">Two player</li>
+        <li class="buttons loaded3" id="options">Options</li>
+      </ul>
+      <div class="options-wrap">
+        <h2>Options</h2>
+        <p class="slider-text">Volume</p>
+        <input class="slider" id="volume" type="range" min="0" max="100" value="70" step="10">
+        <p class="slider-text">Sound Effects</p>
+        <input class="slider" id="sfx" type="range" min="0" max="100" value="70" step="10">
+        <p class="slider-text">Brightness</p>
+        <input class="slider" id="brightness" type="range" min="0" max="100" value="100" step="10">
+        <p class="press-enter">Press enter to continue</p>
+        <!-- this is for rebinding -->
+        <!-- <div class="controls" id="controls1">player 1 controls</div> -->
+        <!-- <div class="controls" id="controls2">player 2 controls</div> -->
+      </div>
+      <div class="stage-select">
+        <h2>Stage Select</h2>
+        <div class="vid-wrap">
+          <div class="stage-choice">
+          <p>Return to Besaid</p>
+          <video class="vid besaid" src="assets/clip_return_to_besaid.mp4" value="https://i.imgur.com/NtCbENX.mp4" ></video>
+        </div>
+        <div class="stage-choice">
+          <p>Automatic</p>       
+          <video class="vid automatic" src="assets/clip_automatic.mp4" value="https://i.imgur.com/nRLJhGp.mp4" ></video>
+        </div>
+        <div class="stage-choice">
+          <p>Say you won't</p>
+          <video class="vid say-you-wont" src="assets/clip_say_you_won't.mp4" value="https://i.imgur.com/9BFnU1O.mp4" ></video>
+        </div>
+        </div>
+      </div>
+      <li class="back" id="back-btn">Back</li>
+    </div>
+    <div class="wrapper">
+      <div class="container">
+        <div class="win-lose" id="win-lose1">
+          <div>
+            <p class="game-over-text game-over1" id="p1-lose">Game Over</p>
+            <p class="game-over-text game-over1">Final score</p>
+            <p class="game-over-text game-over1 f-score1"></p>
+          </div>
+        </div>
+        <div class="grid"></div>
+        <div class="sidebar">
+          <div class="next"></div>
+          <div class="timer">Time<span class="time" id="time1">0</span></div>
+          <div class="score">score<span id="score">0</span></div>
+          <div class="controls-ingame">
+            <p>controls:</p>
+            <p class="text">rotate = ⬆️</p>
+            <p class="text">left = ⬅️</p>
+            <p class="text">right = ➡️ </p>
+            <p class="text">down = ⬇️</p>
+            <p class="text">drop = ⁄</p>
+            <p class="text">pause = ⏎ </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container2">
+        <div class="win-lose" id="win-lose2">
+          <div class=".winner">
+            <p class="game-over-text game-over2" id="p2-lose">Game Over</p>
+            <p class="game-over-text game-over2">Final score</p>
+            <p class="game-over-text game-over2 f-score2"></p>
+          </div>
+        </div>
+        <div class="grid2"></div>
+        <div class="sidebar2">
+          <div class="next2"></div>
+          <div class="timer2">Time<span class="time" id="time2">0</span></div>
+          <div class="score2">score<span id="score2">0</span></div>
+          <div class="controls-ingame">
+            <p>controls:</p>
+            <p class="text">rotate = W</p>
+            <p class="text">left = A</p>
+            <p class="text">right = D </p>
+            <p class="text">down = S</p>
+            <p class="text">drop = Q</p>
+            <p class="text">pause = ⏎ </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+
+</html>
